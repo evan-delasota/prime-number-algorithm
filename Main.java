@@ -5,8 +5,9 @@ class Main {
 
   public static boolean isPrime(int n) {
     int[] prime = new int[n + 1];
+    
     for(int i = 3; i <= n; ++i) {
-      if (prime[i] % 2 == 0) {
+      if (i % 2 == 0) {
         prime[i] = 0;
       } else {
         prime[i] = 1;
@@ -14,8 +15,8 @@ class Main {
     }
 
     for (int i = 3; i <= n; ++i) {
-      if (prime[i]) {
-        for (int j = 2 * i; j <= n; j += i) {
+      if (prime[i] == 1) {
+        for (int j = i * i; j <= n; j += i) {
           prime[j] = 0;
         }
       }
@@ -23,7 +24,7 @@ class Main {
 
     prime[0] = 0;
     prime[1] = 0;
-    prime[2] = 0;
+    prime[2] = 1;
 
     return (prime[n] == 1) ? true : false;
   }
