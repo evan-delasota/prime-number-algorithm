@@ -7,7 +7,7 @@ class Main {
     int[] prime = new int[n + 1];
     
     for(int i = 3; i <= n; i += 2) {
-      prime[1] = 1;
+      prime[i] = 1;
     }
 
     for (int i = 3; i <= n; i += 2) {
