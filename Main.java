@@ -6,17 +6,13 @@ class Main {
   public static boolean isPrime(int n) {
     int[] prime = new int[n + 1];
     
-    for(int i = 3; i <= n; ++i) {
-      if (i % 2 == 0) {
-        prime[i] = 0;
-      } else {
-        prime[i] = 1;
-      }
+    for(int i = 3; i <= n; i += 2) {
+      prime[1] = 1;
     }
 
-    for (int i = 3; i <= n; ++i) {
+    for (int i = 3; i <= n; i += 2) {
       if (prime[i] == 1) {
-        for (int j = i * i; j <= n; j += i) {
+        for (int j = i * i; j <= n; j += i * 2) {
           prime[j] = 0;
         }
       }
